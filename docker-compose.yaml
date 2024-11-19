@@ -5,7 +5,7 @@ services:
   nginx:
     # image: nginx #:1.19.8-alpine
     build: .
-    # image: dr1nkz/nginx_auth:latest
+    image: dr1nkz/nginx_auth:latest
     container_name: nginx
     ports:
       - "8080:80"
