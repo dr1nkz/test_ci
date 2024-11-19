@@ -65,4 +65,4 @@ jobs:
           # password: ${{ secrets.PASSWORD }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script_stop: true
-          script: bash ./deploy.sh
+          script: pwd; ls; bash ./deploy.sh
