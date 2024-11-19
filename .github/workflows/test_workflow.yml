@@ -64,6 +64,5 @@ jobs:
           username: ${{ secrets.USERNAME }}
           # password: ${{ secrets.PASSWORD }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script_stop: true
+          # script_stop: true
           script: bash deploy.sh
-          debug: true
