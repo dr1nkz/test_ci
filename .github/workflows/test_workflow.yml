@@ -57,7 +57,7 @@ jobs:
     steps:
 
       - name: Connect and run script
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@b4a07ca5940a7dc94925e99f8e6eab3671b0fa64
         with:
           host: ${{ secrets.SERVER_HOST }}
           port: ${{ secrets.SERVER_PORT }}
