@@ -65,4 +65,4 @@ jobs:
           # password: ${{ secrets.PASSWORD }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script_stop: true
-          script: pwd; ls; bash ${{ github.event.repository.name }}/deploy.sh
+          script: cd ${{ github.event.repository.name }}; git pull; bash deploy.sh
