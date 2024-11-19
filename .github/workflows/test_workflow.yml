@@ -25,6 +25,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+      
+      - name: echo secrets
+        run: echo ${{ secrets.DOCKER_USERNAME }} ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Log in to Docker Hub
         uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
@@ -57,7 +60,7 @@ jobs:
 
   server_update:
     needs: push_to_dockerhub
-    name: Update server buy ssh
+    name: Update server by ssh
     runs-on: ubuntu-latest
     steps:
       - name: Connect and run script
