@@ -49,26 +49,19 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      # - name: build image
-      #   run: docker compose build
-
-      # - name: tag image
-      #   run: docker tag nginx_auth-nginx:latest dr1nkz/nginx:latest
-
-      # - name: push image to docker hub
-      #   run: docker push dr1nkz/nginx
-
   server_update:
     needs: push_to_dockerhub
     name: Update server by ssh
     runs-on: ubuntu-latest
+
     steps:
+
       - name: Connect and run script
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
           port: ${{ secrets.SERVER_PORT }}
-          username: ${{ secrets.USERNAME }}
+          username: ${{ secrets.SERVER_USER_LOGIN }}
           password: ${{ secrets.PASSWORD }}
           script_stop: true
           script: bash deploy.sh
