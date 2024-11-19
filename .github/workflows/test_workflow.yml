@@ -48,7 +48,8 @@ jobs:
       #     push: true
       #     tags: ${{ steps.meta.outputs.tags }}
       #     labels: ${{ steps.meta.outputs.labels }}
-
+      - name: change dir
+        run: cd test_ci
       - name: build image
         run: docker compose build
 
