@@ -63,6 +63,6 @@ jobs:
           port: ${{ secrets.SERVER_PORT }}
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          script_stop: true
+          # script_stop: true
           script: bash deploy.sh
           debug: true
